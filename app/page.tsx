@@ -1,6 +1,7 @@
 import ServicesOverview from "@/components/blocks/servicesOverview";
 import Support from "@/components/blocks/support";
 import Testimonial from "@/components/blocks/testimonials";
+import BlurFade from "@/components/ui/blurfade";
 import { Button } from "@/components/ui/button";
 import GradualSpacing from "@/components/ui/gradual-spacing";
 import { lusitana } from "@/lib/fonts";
@@ -11,7 +12,7 @@ import Image from "next/image";
 export default function Home() {
   return (
     <main className=' min-h-minusNavbar bg-gradient-to-b from-background'>
-      <div className='grid grid-cols-2 px-20'>
+      <div className='grid grid-cols-2 px-20 min-h-minusNavbar'>
         <div className='pt-10'>
           <div className='flex flex-col gap-4'>
             <h3
@@ -64,7 +65,7 @@ export default function Home() {
         </div>
       </div>
       <ServicesOverview />
-      <div className='pt-10'>
+      <div>
         <div>
           <h3 className='text-xl font-medium '>
             Don't Take our word for it! Hear from other customers

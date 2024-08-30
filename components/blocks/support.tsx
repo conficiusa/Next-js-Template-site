@@ -16,7 +16,7 @@ const Support = () => {
           <div>
             <div className="mb-6">
               <h2 className="text-md font-medium mb-1">Locate US.</h2>
-              <div>
+              <div className="text-sm">
                 <address>Uk-11223-344</address>
                 <address>Opposite Goil Filling Station</address>
                 <address>Tamale, Ghana</address>
@@ -24,7 +24,7 @@ const Support = () => {
             </div>
             <div>
               <h2 className="text-md font-semibold mb-1">Reach Us.</h2>
-              <div>
+              <div className="text-sm">
                 <address>Phone: +233 24 123 4567</address>
                 <address>Email: addawebadua@gmail.come</address>
               </div>

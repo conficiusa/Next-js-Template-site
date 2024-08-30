@@ -4,10 +4,11 @@ import Image from "next/image";
 import { serviceCards } from "@/lib/data";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import BlurFade from "../ui/blurfade";
 
 const ServicesOverview = () => {
   return (
-    <section>
+    <section className="min-h-screen">
       <div>
         <div className=" grid grid-cols-[500px_1fr]">
           <div className="py-10">
@@ -29,20 +30,22 @@ const ServicesOverview = () => {
             </div>
             <div className="grid grid-cols-2 gap-4">
               {serviceCards.map((card, index) => (
-                <div className="shadow-md rounded-md p-4" key={index}>
-                  <p className="mb-2">{card.icon}</p>
-                  <p className="font-medium mb-4"> {card.title}</p>
-                  <p className="text-sm text-muted-foreground">
-                    {card.description}
-                  </p>
-                  <Button
-                    className="flex items-center mt-3 gap-2"
-                    variant={"ghost"}
-                    size={"sm"}
-                  >
-                    {card.footer} <ArrowRight />
-                  </Button>
-                </div>
+                <BlurFade key={index}>
+                  <div className="shadow-md rounded-md p-4">
+                    <p className="mb-2">{card.icon}</p>
+                    <p className="font-medium mb-4"> {card.title}</p>
+                    <p className="text-sm text-muted-foreground">
+                      {card.description}
+                    </p>
+                    <Button
+                      className="flex items-center mt-3 gap-2"
+                      variant={"ghost"}
+                      size={"sm"}
+                    >
+                      {card.footer} <ArrowRight />
+                    </Button>
+                  </div>
+                </BlurFade>
               ))}
             </div>
           </div>

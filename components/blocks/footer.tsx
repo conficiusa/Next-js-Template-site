@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="min-h-[50dvh] bg-muted w-full container mt-20">
+    <footer className="min-h-[50dvh] bg-secondary w-full container mt-20">
       <div className="grid lg:grid-cols-[400px_1fr] md:p-10 border-b max-md:py-5 gap-y-5">
         <div className="hidden md:block">
           <h1 className="text-xl font-medium tracking-wide mb-5">Unarcom</h1>
