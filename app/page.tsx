@@ -68,7 +68,7 @@ export default function Home() {
       <div>
         <div>
           <h3 className='text-xl font-medium '>
-            Don't Take our word for it! Hear from other customers
+            Don&apos;t Take our word for it! Hear from other customers
           </h3>
         </div>
         <Testimonial />
