@@ -15,7 +15,7 @@ const FAQ = () => {
       <main className="container mx-auto px-6 py-16 text-center">
         <h1 className="text-4xl font-bold mb-6">FAQs</h1>
         <p className="text-gray-600 mb-12">
-          Have questions? Here you'll find the answers most valued by our
+          Have questions? Here you&apos;ll find the answers most valued by our
           partners, along with access to step-by-step instructions and support.
         </p>
         <div className="flex justify-center">
