@@ -8,6 +8,7 @@ export interface ServiceCard {
 }
 export type ServiceCards = ServiceCard[];
 
+//form builder props
 export interface FormBuilderProps {
   name: string;
   label: string;
@@ -19,3 +20,10 @@ export interface FormBuilderProps {
   descriptionClassName?: string;
   labelClassName?: string;
 }
+
+//FAQ data
+export interface FAQ {
+  title: string;
+  content: string;
+}
+export type FaqData = FAQ[];

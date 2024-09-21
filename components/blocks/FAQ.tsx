@@ -1,53 +1,76 @@
+import React from "react";
+import Image from "next/image";
+import Link from "next/link";
 import {
   Accordion,
-  AccordionContent,
   AccordionItem,
   AccordionTrigger,
+  AccordionContent,
 } from "@/components/ui/accordion";
+import { FaqAccordion } from "@/lib/data";
 
-export function FAQ() {
+const FAQ = () => {
   return (
-    <Accordion type="single" collapsible className="w-full">
-      <AccordionItem value="item-1">
-        <AccordionTrigger>Is it accessible?</AccordionTrigger>
-        <AccordionContent>
-          Yes. It adheres to the WAI-ARIA design pattern.
-        </AccordionContent>
-      </AccordionItem>
-      <AccordionItem value="item-2">
-        <AccordionTrigger>Is it styled?</AccordionTrigger>
-        <AccordionContent>
-          Yes. It comes with default styles that matches the other
-          components&apos; aesthetic.
-        </AccordionContent>
-      </AccordionItem>
-      <AccordionItem value="item-3">
-        <AccordionTrigger>Is it animated?</AccordionTrigger>
-        <AccordionContent>
-          Yes. It&apos;s animated by default, but you can disable it if you
-          prefer.
-        </AccordionContent>
-      </AccordionItem>
-      <AccordionItem value="item-4">
-        <AccordionTrigger>Is it accessible?</AccordionTrigger>
-        <AccordionContent>
-          Yes. It adheres to the WAI-ARIA design pattern.
-        </AccordionContent>
-      </AccordionItem>
-      <AccordionItem value="item-5">
-        <AccordionTrigger>Is it styled?</AccordionTrigger>
-        <AccordionContent>
-          Yes. It comes with default styles that matches the other
-          components&apos; aesthetic.
-        </AccordionContent>
-      </AccordionItem>
-      <AccordionItem value="item-6">
-        <AccordionTrigger>Is it animated?</AccordionTrigger>
-        <AccordionContent>
-          Yes. It&apos;s animated by default, but you can disable it if you
-          prefer.
-        </AccordionContent>
-      </AccordionItem>
-    </Accordion>
+    <div className="bg-gray-50 min-h-screen rounded-lg">
+      <main className="container mx-auto px-6 py-16 text-center">
+        <h1 className="text-4xl font-bold mb-6">FAQs</h1>
+        <p className="text-gray-600 mb-12">
+          Have questions? Here you'll find the answers most valued by our
+          partners, along with access to step-by-step instructions and support.
+        </p>
+        <div className="flex justify-center">
+          <div className="relative w-64 h-64">
+            <Image
+              src="/faq.png"
+              alt="FAQ Illustration"
+              layout="fill"
+              objectFit="contain"
+            />
+          </div>
+        </div>
+      </main>
+
+      <section className="bg-white py-12">
+        <div className="container mx-auto px-6">
+          <div className="flex justify-between">
+            <ul className="text-blue-600 space-y-4 hidden md:block">
+              <li>
+                <Link href="#">About us</Link>
+              </li>
+              <li>
+                <Link href="#">Guest relations</Link>
+              </li>
+              <li>
+                <Link href="#">One Key™</Link>
+              </li>
+              <li>
+                <Link href="#">Property listing</Link>
+              </li>
+              <li>
+                <Link href="#">Ranking and metrics</Link>
+              </li>
+              <li>
+                <Link href="#">Reservations and rates</Link>
+              </li>
+            </ul>
+            <div className="md:w-3/4 mx-auto">
+              <h2 className="text-xl font-semibold mb-4">About us</h2>
+              <div className="space-y-4">
+                {FaqAccordion.map((faq, index) => (
+                  <Accordion type="single" key={index} collapsible>
+                    <AccordionItem value={"item" + index}>
+                      <AccordionTrigger>{faq.title}</AccordionTrigger>
+                      <AccordionContent>{faq.content}</AccordionContent>
+                    </AccordionItem>
+                  </Accordion>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
   );
-}
+};
+
+export default FAQ;

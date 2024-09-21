@@ -1,43 +1,76 @@
-import SendMessage from "@/components/blocks/sendMessage";
-import { FAQ } from "@/components/blocks/FAQ";
+import React from "react";
+import Image from "next/image";
+import Link from "next/link";
+import {
+  Accordion,
+  AccordionItem,
+  AccordionTrigger,
+  AccordionContent,
+} from "@/components/ui/accordion";
+import { FaqAccordion } from "@/lib/data";
 
-const Support = () => {
+const FAQ = () => {
   return (
-    <section>
-      <div className="grid grid-cols-2">
-        <div className="border-r-[1px]">
-          <p className="text-sm text-muted-foreground text-center my-2 max-w-md mx-auto">
-            We would love to hear from you. Leave a message and we will get back
-            to you as soon as possible
-          </p>
-          <SendMessage />
+    <div className="bg-gray-50 min-h-screen rounded-lg">
+      <main className="container mx-auto px-6 py-16 text-center">
+        <h1 className="text-4xl font-bold mb-6">FAQs</h1>
+        <p className="text-gray-600 mb-12">
+          Have questions? Here you'll find the answers most valued by our
+          partners, along with access to step-by-step instructions and support.
+        </p>
+        <div className="flex justify-center">
+          <div className="relative w-64 h-64">
+            <Image
+              src="/faq.png"
+              alt="FAQ Illustration"
+              layout="fill"
+              objectFit="contain"
+            />
+          </div>
         </div>
-        <div className="px-6">
-          <div>
-            <div className="mb-6">
-              <h2 className="text-md font-medium mb-1">Locate US.</h2>
-              <div className="text-sm">
-                <address>Uk-11223-344</address>
-                <address>Opposite Goil Filling Station</address>
-                <address>Tamale, Ghana</address>
-              </div>
-            </div>
-            <div>
-              <h2 className="text-md font-semibold mb-1">Reach Us.</h2>
-              <div className="text-sm">
-                <address>Phone: +233 24 123 4567</address>
-                <address>Email: addawebadua@gmail.come</address>
+      </main>
+
+      <section className="bg-white py-12">
+        <div className="container mx-auto px-6">
+          <div className="flex justify-between">
+            <ul className="text-blue-600 space-y-4">
+              <li>
+                <Link href="#">About us</Link>
+              </li>
+              <li>
+                <Link href="#">Guest relations</Link>
+              </li>
+              <li>
+                <Link href="#">One Key™</Link>
+              </li>
+              <li>
+                <Link href="#">Property listing</Link>
+              </li>
+              <li>
+                <Link href="#">Ranking and metrics</Link>
+              </li>
+              <li>
+                <Link href="#">Reservations and rates</Link>
+              </li>
+            </ul>
+            <div className="w-3/4">
+              <h2 className="text-xl font-semibold mb-4">About us</h2>
+              <div className="space-y-4">
+                {FaqAccordion.map((faq, index) => (
+                  <Accordion type="single" key={index} collapsible>
+                    <AccordionItem value={"item" + index}>
+                      <AccordionTrigger>{faq.title}</AccordionTrigger>
+                      <AccordionContent>{faq.content}</AccordionContent>
+                    </AccordionItem>
+                  </Accordion>
+                ))}
               </div>
             </div>
           </div>
-          <h1 className="text-4xl font-semibold mt-4">FAQ.</h1>
-          <div className="py-2">
-            <FAQ />
-          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   );
 };
 
-export default Support;
+export default FAQ;

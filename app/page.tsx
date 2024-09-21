@@ -1,9 +1,7 @@
+import FAQ from "@/components/blocks/FAQ";
 import ServicesOverview from "@/components/blocks/servicesOverview";
-import Support from "@/components/blocks/support";
 import Testimonial from "@/components/blocks/testimonials";
-import BlurFade from "@/components/ui/blurfade";
 import { Button } from "@/components/ui/button";
-import GradualSpacing from "@/components/ui/gradual-spacing";
 import { lusitana } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import { CalendarCheck2, CreditCard, Globe, LockKeyhole } from "lucide-react";
@@ -12,9 +10,9 @@ import Image from "next/image";
 export default function Home() {
   return (
     <main className=' min-h-minusNavbar bg-gradient-to-b from-background'>
-      <div className='grid grid-cols-2 px-20 min-h-minusNavbar'>
-        <div className='pt-10'>
-          <div className='flex flex-col gap-4'>
+      <div className='grid lg:grid-cols-2 lg:px-14 min-h-minusNavbar max-sm:mt-10'>
+        <div className='flex lg:items-end items-center max:lg:pt-20'>
+          <div className='flex flex-col gap-4 max-lg:items-center max-lg:text-center'>
             <h3
               className={cn(
                 "uppercase text-muted-foreground text-sm font-medium",
@@ -23,8 +21,9 @@ export default function Home() {
             >
               30 days free trial
             </h3>
-            <h1 className='text-6xl '>
-              The best way to showcase your Projects
+            <h1 className='text-4xl md:text-5xl lg:text-6xl  font-semibold max-lg:leading-[50px]'>
+              Save Lives and Save the Environment with{" "}
+              <span className='text-green-700'> Heal Fibre</span>
             </h1>
             <ul className='grid grid-cols-2 gap-2 py-2'>
               <li className='flex text-sm items-center gap-2'>
@@ -52,35 +51,27 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className='flex justify-center items-center bg blue-500'>
-          <div>
+        <div className='relative hidden sm:block'>
+          <div className='hidden lg:block'>
             <Image
-              width={800}
-              height={800}
-              src='/landingDesktop.png'
+              fill
+              src='/hero.webp'
               alt='Hero Image'
-              className='object-cover'
+              className='object-cover rounded-lg shadow-md'
             />
           </div>
         </div>
       </div>
       <ServicesOverview />
-      <div>
-        <div>
-          <h3 className='text-xl font-medium '>
-            Don&apos;t Take our word for it! Hear from other customers
-          </h3>
-        </div>
+      <div className='text-center space-y-4'>
+        <h1 className='text-3xl font-bold'>Testimonials</h1>
+        <p className='text-md font-medium '>
+          Don&apos;t Take our word for it! Hear from other customers
+        </p>
         <Testimonial />
       </div>
-      <div>
-        <div>
-          <h3 className='text-2xl pt-14 pb-4 uppercase font-semibold'>
-            {" "}
-            Need Help?
-          </h3>
-        </div>
-        <Support />
+      <div className='my-8'>
+        <FAQ />
       </div>
     </main>
   );
