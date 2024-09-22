@@ -4,7 +4,7 @@ export interface ServiceCard {
   title: string;
   description: string;
   footer: string;
-  icon: React.ReactNode;
+  icon: string;
 }
 export type ServiceCards = ServiceCard[];
 

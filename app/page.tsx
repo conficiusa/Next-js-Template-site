@@ -2,49 +2,32 @@ import FAQ from "@/components/blocks/FAQ";
 import ServicesOverview from "@/components/blocks/servicesOverview";
 import Testimonial from "@/components/blocks/testimonials";
 import { Button } from "@/components/ui/button";
-import { lusitana } from "@/lib/fonts";
-import { cn } from "@/lib/utils";
-import { CalendarCheck2, CreditCard, Globe, LockKeyhole } from "lucide-react";
+
 import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className=' min-h-minusNavbar bg-gradient-to-b from-background'>
-      <div className='grid lg:grid-cols-2 lg:px-14 min-h-minusNavbar max-sm:mt-10'>
-        <div className='flex lg:items-end items-center max:lg:pt-20'>
+    <main className=' min-h-minusNavbar bg-gradient-to-b from-green-50 container'>
+      <div className='grid lg:grid-cols-2 lg:px-14 min-h-minusNavbar max-lg:pb-10'>
+        <div className='flex items-center max:lg:pt-20'>
           <div className='flex flex-col gap-4 max-lg:items-center max-lg:text-center'>
-            <h3
-              className={cn(
-                "uppercase text-muted-foreground text-sm font-medium",
-                lusitana.className
-              )}
-            >
-              30 days free trial
-            </h3>
-            <h1 className='text-4xl md:text-5xl lg:text-6xl  font-semibold max-lg:leading-[50px]'>
-              Save Lives and Save the Environment with{" "}
+            <div className="lg:hidden">
+              <Image
+                src='/logo.png'
+                width={200}
+                height={200}
+                alt='Heal Fibre'
+              />
+            </div>
+            <h1 className='text-4xl md:text-5xl lg:text-[56px]  font-semibold max-lg:leading-[50px]  leading-[80px] text-opacity-90'>
+              <p className='lg:leading-[65px]'>
+                {" "}
+                Turning Nature&apos;s Waste into Life-Saving Solutions with
+              </p>
               <span className='text-green-700'> Heal Fibre</span>
             </h1>
-            <ul className='grid grid-cols-2 gap-2 py-2'>
-              <li className='flex text-sm items-center gap-2'>
-                <Globe className='w-4 h-4 text-muted-foreground' /> Availabe
-                Anywhere, Anytime Access
-              </li>
-              <li className='flex text-sm items-center gap-2'>
-                <LockKeyhole className='w-4 h-4 text-muted-foreground' /> Secure
-                and Private
-              </li>
-              <li className='flex text-sm items-center gap-2'>
-                <CalendarCheck2 className='w-4 h-4 text-muted-foreground' />
-                Efficient Scheduling
-              </li>
-              <li className='flex text-sm items-center gap-2'>
-                <CreditCard className='w-4 h-4 text-muted-foreground' />
-                Transparent Pricing
-              </li>
-            </ul>
 
-            <div className='py-10'>
+            <div className='py-5'>
               <Button size={"lg"} className='w-56'>
                 Get Started
               </Button>
@@ -54,10 +37,11 @@ export default function Home() {
         <div className='relative hidden sm:block'>
           <div className='hidden lg:block'>
             <Image
-              fill
-              src='/hero.webp'
+              width={500}
+              height={500}
+              src='/package.png'
               alt='Hero Image'
-              className='object-cover rounded-lg shadow-md'
+              className='object-cover rounded-lg'
             />
           </div>
         </div>

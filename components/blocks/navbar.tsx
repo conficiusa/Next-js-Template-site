@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import Sidebar from "./sidebar";
 import { Menu } from "lucide-react";
+import Image from "next/image";
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -15,7 +16,7 @@ const Navbar = () => {
   return (
     <nav
       className={cn(
-        "fixed bg-background/95 duration-500 flex items-center w-full z-50 backdrop-blur-[5.9px] container  backdrop-saturate-[180%] py-4",
+        "fixed bg-background/95 duration-500 flex items-center w-full z-50 backdrop-blur-[5.9px] container  backdrop-saturate-[180%] py-2",
         isScrolled ? "shadow-[0_4px_30px_rgba(0,0,0,0.1)]" : ""
       )}
     >
@@ -25,17 +26,28 @@ const Navbar = () => {
             <Menu className="w-6 h-6" />
           </Button>
         </Sidebar>
-        <Link href={"/"} className="text-xl font-semibold mr-5">
-          Heal Fibre
+        <Link
+          href={"/"}
+          className="text-xl font-semibold mr-5 flex items-center gap-1"
+        >
+          Heal Fibre{" "}
+          <Image
+            src={"/logo.png"}
+            width={50}
+            height={50}
+            className="object-cover"
+            alt="logo"
+          />
           <span className="sr-only">Home</span>
         </Link>
       </div>
-      <ul className="flex-1 gap-8 items-center text-sm py-4  hidden md:flex">
+      <ul className="flex-1 gap-8 items-center text-sm hidden md:flex">
         {[
           { href: "/services", label: "Services" },
           { href: "/pricing", label: "Pricing" },
           { href: "/about", label: "About" },
           { href: "/contact-us", label: "Contact us" },
+          { href: "/more", label: "More" },
         ].map(({ href, label }) => (
           <Link
             key={href}

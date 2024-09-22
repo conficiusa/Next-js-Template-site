@@ -46,7 +46,7 @@ const Sidebar = ({ children }: SidebarProps) => {
       <SheetTrigger asChild className="md:hidden">
         {children}
       </SheetTrigger>
-      <SheetContent side="left">
+      <SheetContent side="left" className="bg-background">
         <SheetHeader>
           <SheetTitle autoFocus>Heal Fibre</SheetTitle>
         </SheetHeader>

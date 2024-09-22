@@ -24,7 +24,7 @@ export default function RootLayout({
         )}
       >
         <Navbar />
-        <main className='container py-[3.8rem]'>{children}</main>
+        <main className='py-[3.8rem]'>{children}</main>
         <Footer />
       </body>
     </html>
